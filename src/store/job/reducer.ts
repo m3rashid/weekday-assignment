@@ -1,7 +1,16 @@
-import { JobAction, JobState, jobInitialState } from "./helpers";
+import { JobAction, JobState, filterJdList, jobInitialState } from "./helpers";
 
 const jobReducer = (state = jobInitialState, action: JobAction): JobState => {
   if (action.type === "JOBS_LOADING") return { ...state, loading: true };
+  if (action.type === "MODIFY_FILTERS") {
+    const filters = { ...(state.filters || {}), ...action.payload };
+
+    return {
+      ...state,
+      filters,
+      filteredJdList: filterJdList(state.jdList, filters),
+    };
+  }
   if (action.type === "JOBS_LOADED") {
     const allJobs = state.jdList;
     for (let i = 0; i < action.payload.jdList.length; i++) {
@@ -12,8 +21,9 @@ const jobReducer = (state = jobInitialState, action: JobAction): JobState => {
     return {
       ...state,
       loading: false,
-      currentoffset: state.currentoffset + 1,
       jdList: allJobs,
+      currentoffset: state.currentoffset + 1,
+      filteredJdList: filterJdList(allJobs, state.filters),
     };
   }
   return state;

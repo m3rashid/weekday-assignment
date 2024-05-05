@@ -18,16 +18,14 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Jobs</h1>
+    <div style={{ margin: 32 }}>
       <Filters />
 
-      <div style={{ display: "flex", gap: 20, flexWrap: "wrap", height: "60vh" }}>
-        {jobs.jdList.map((job) => {
-          return (
-            // <div data-key={job.jdUid} key={job.jdUid} style={{ backgroundColor: "lightgray", padding: 10, width: 150, height: 150 }}>
-            <JobCard key={job.jdUid} {...job} />
-          );
+      <br />
+
+      <div style={{ display: "flex", gap: 60, flexWrap: "wrap", minHeight: 300 }}>
+        {jobs.filteredJdList.map((job) => {
+          return <JobCard key={job.jdUid} {...job} />;
         })}
       </div>
 

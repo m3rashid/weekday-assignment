@@ -8,7 +8,6 @@
   align-items: center;
   flex-direction: row;
   min-width: 80px;
-  /* box-shadow: -1px -1px 5px lightgray inset; */
 }
 
 .select:hover {
@@ -22,6 +21,8 @@
   border-radius: 4px;
   background-color: white;
   border: 1.5px solid lightgray;
+  max-height: 250px;
+  overflow: auto;
   box-shadow: -1px -1px 2px lightgray inset;
 }
 
@@ -32,4 +33,9 @@
 
 .option:hover {
   background-color: lightblue;
+}
+
+.label {
+  font-weight: bold;
+  height: 20px;
 }

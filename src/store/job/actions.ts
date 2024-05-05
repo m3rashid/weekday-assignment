@@ -318,7 +318,7 @@ export function getJobs() {
       //   body: JSON.stringify({ limit: state.job.limit, offset: state.job.currentoffset }),
       // });
       // const data = await res.json();
-      dispatch({ type: "JOBS_LOADED", payload: { jdList: data, totalCount: 190 } });
+      dispatch({ type: "JOBS_LOADED", payload: { jdList: data, totalCount: 190 } }); // dummy for offline testing
     } catch (err) {
       console.log(err);
       dispatch({ type: "JOBS_LOADED", payload: jobsNullResponse });
