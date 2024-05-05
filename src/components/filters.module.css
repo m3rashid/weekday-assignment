@@ -1,0 +1,8 @@
+.filterRoot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,35 @@
+.select {
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1.5px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  min-width: 80px;
+  /* box-shadow: -1px -1px 5px lightgray inset; */
+}
+
+.select:hover {
+  border: 1.5px solid lightblue;
+  box-shadow: -1px -1px 2px lightgray inset;
+}
+
+.selectMenu {
+  opacity: 1;
+  position: absolute;
+  border-radius: 4px;
+  background-color: white;
+  border: 1.5px solid lightgray;
+  box-shadow: -1px -1px 2px lightgray inset;
+}
+
+.option {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: lightblue;
+}
