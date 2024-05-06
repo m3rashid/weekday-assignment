@@ -1,21 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { RootState } from "./store";
-import useInfiniteScroll from "./hooks/useInfiniteScroll";
-import { getJobs } from "./store/job/actions";
 import JobCard from "./components/jobCard";
 import Filters from "./components/filters";
+import useInfiniteScroll from "./hooks/useInfiniteScroll";
+import Spinner from "./components/spinner";
 
 function App() {
-  // const { targetRef } = useInfiniteScroll();
+  const { targetRef } = useInfiniteScroll();
   const jobs = useSelector((state: RootState) => state.job);
-  const dispatch = useDispatch();
-
-  // dummy
-  useEffect(() => {
-    dispatch(getJobs() as any);
-  }, []);
 
   return (
     <div style={{ margin: 32 }}>
@@ -29,9 +22,11 @@ function App() {
         })}
       </div>
 
-      {/* <div ref={targetRef}></div> */}
+      <div ref={targetRef}></div>
 
-      {jobs.loading ? <h3>Loading...</h3> : null}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: 100, marginBottom: 100 }}>
+        {jobs.loading ? <Spinner /> : null}
+      </div>
     </div>
   );
 }

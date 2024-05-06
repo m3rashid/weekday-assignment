@@ -23,7 +23,7 @@ export type JobState = {
 };
 
 export const jobInitialState: JobState = {
-  limit: 20,
+  limit: 10,
   jdList: [],
   filters: {},
   loading: true,
