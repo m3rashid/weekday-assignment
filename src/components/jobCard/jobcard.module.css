@@ -1,0 +1,76 @@
+.card {
+  border-radius: 16px;
+  border: 1px solid #eaeaea;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px;
+  min-width: 200px;
+  max-width: 380px;
+  padding: 24px;
+  transition: color 0.15s ease;
+  border-color: 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chip {
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  font-size: 12px;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: fit-content;
+}
+
+.companyNameDiv {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.companyNameInnerImg {
+  height: 44px;
+  width: 44px;
+  border-radius: 8px;
+}
+
+.companyNameInnerDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.companyName {
+  color: gray;
+  font-weight: bold;
+}
+
+.jobRole {
+  font-weight: 600;
+}
+
+.location {
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+  padding-top: 4px;
+}
+.aboutUs {
+  font-weight: 900;
+}
+.viewJob {
+  color: blue;
+  text-align: center;
+  margin-top: -30px;
+}
+.easyApplyButton {
+  background-color: rgb(85, 239, 196);
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
