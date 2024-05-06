@@ -3,6 +3,8 @@ import { Action, Job } from "../../types";
 export type GetJobsParams = { limit: number; offset: number };
 export type GetJobsResponse = { jdList: Array<Job>; totalCount: number };
 export const jobsNullResponse: GetJobsResponse = { jdList: [], totalCount: 0 };
+
+// The filters that can be applied to the job list
 export type JobFilters = Partial<Pick<Job, "minExp" | "companyName" | "location" | "jobRole" | "minJdSalary">> & {
   remote?: boolean;
 };
@@ -11,6 +13,7 @@ export type JobLoadingAction = Action<"JOBS_LOADING">;
 export type JobLoadedAction = Action<"JOBS_LOADED", GetJobsResponse>;
 export type ChangeFiltersAction = Action<"MODIFY_FILTERS", JobFilters>;
 
+// Actions supported by the job reducer (as a union of all actions)
 export type JobAction = JobLoadingAction | JobLoadedAction | ChangeFiltersAction;
 
 export type JobState = {
@@ -31,6 +34,12 @@ export const jobInitialState: JobState = {
   filteredJdList: [],
 };
 
+/**
+ * @description The `filterJdList` function filters the job list based on the filters provided
+ * @param jdList The list of jobs
+ * @param filters The filters to be applied
+ * @returns The filtered list of jobs
+ */
 export function filterJdList(jdList: Array<Job>, filters: JobFilters): Array<Job> {
   const jobs: Array<Job> = [];
   for (let i = 0; i < jdList.length; i++) {

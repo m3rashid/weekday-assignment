@@ -5,6 +5,7 @@ import { capitalize, limitText } from "../../utils/strings";
 function JobCard(job: Job) {
   return (
     <div className={jobStyles.card}>
+      {/* Hardcoded because the API doesn't have this data */}
       <span className={jobStyles.chip}>⌛ Posted 13 days ago</span>
 
       <div className={jobStyles.companyNameDiv}>
