@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import CustomSelect from "./select";
-import { RootState } from "../store";
+import CustomSelect from "../select";
+import { RootState } from "../../store";
+import { Dispatch } from "../../types";
 import styles from "./filters.module.css";
-import { Dispatch } from "../types";
-import { ChangeFiltersAction, JobFilters } from "../store/job/helpers";
+import { ChangeFiltersAction, JobFilters } from "../../store/job/helpers";
 
 function Filters() {
   const dispatch: Dispatch<ChangeFiltersAction> = useDispatch();
